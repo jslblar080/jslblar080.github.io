@@ -1,0 +1,20 @@
+title: 이정수 블로그
+
+email: jslblar080@gmail.com
+
+description: ""
+
+baseurl: "" # the subpath of your site, e.g. /blog
+
+url: "https://jslblar080.github.io"
+permalink: /articles/:title/
+
+github_username:  jslblar080
+
+header_pages:
+  - articles/index.md
+
+# Build settings
+theme: minima
+plugins:
+  - jekyll-seo-tag
