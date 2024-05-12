@@ -14,6 +14,7 @@ layout: post
 
 {% highlight ruby %}
 public class FeedBack1 {
+
     public static int counter = 0;
 
     public static void response1(int total) {
@@ -30,6 +31,7 @@ public class FeedBack1 {
 
 {% highlight ruby %}
 public class WithPublic {
+    
     public static String[] strArgs;
 
     public static void main(String[] args) {
