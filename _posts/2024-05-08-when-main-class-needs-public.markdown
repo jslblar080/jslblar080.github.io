@@ -15,7 +15,7 @@ layout: post
 {% highlight ruby %}
 public class FeedBack1 {
 
-    public static int counter = 0;
+    private static int counter = 0;
 
     public static void response1(int total) {
         if (counter < total) {
