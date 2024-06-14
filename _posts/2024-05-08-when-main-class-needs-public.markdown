@@ -35,6 +35,7 @@ public class WithPublic {
     public static String[] strArgs;
 
     public static void main(String[] args) {
+        
         System.out.println("main 패키지의 main() 메서드입니다.");
         FeedBack1.response1(1);
         FeedBack2.response2(2);
