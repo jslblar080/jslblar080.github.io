@@ -16,13 +16,16 @@ layout: post
 2024-09-20T16:10:33.524017Z 1 [ERROR] [MY-012574] [InnoDB] Unable to lock ./ibdata1 error: 35
 {% endhighlight %}
 
-크게 2가지 사항을 점검하고 해결할 수 있었다.
+크게 3가지 사항을 점검하고 해결할 수 있었다.
 
 {% highlight ruby %}
-# 1. 데몬으로 실행되고 있는 MySQL 종료
+# 1. MySQL 서버 종료
+mysql.server stop
+
+# 2. launchctl을 통해 백그라운드에서 자동 실행되고 있는 MySQL 종료 (Homebrew 설치)
 brew services stop mysql # 특정 버전의 경우: brew services stop mysql@8.0
 
-# 2. mysqld 프로세스를 모두 종료
+# 3. mysqld 프로세스를 모두 종료
 killall mysqld
 {% endhighlight %}
 
