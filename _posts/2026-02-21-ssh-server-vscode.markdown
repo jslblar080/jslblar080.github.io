@@ -23,21 +23,26 @@ Private SSH Key 저장 위치: ~/.ssh/id_ed25519
 
 #### VS Code → Extensions → 'Remote - SSH' 설치
 #### → Ctrl + Shift + P → Remote-SSH: Connect to Host → Configure SSH Hosts
-#### → ~/.ssh/config
-
+#### → ~/.ssh/config에 추가
 {% highlight ruby %}
-# Read more about SSH config files: https://linux.die.net/man/5/ssh_config
 Host lambda-gpu
     HostName instance.ip
     User ubuntu
     IdentityFile ~/.ssh/id_ed25519
 {% endhighlight %}
 
-#### 지정 Host로 SSH Login
+#### → Ctrl + Shift + P → Preferences: Open User Settings (JSON)
+#### -> settings.json에 추가
+{% highlight ruby %}
+"remote.SSH.remotePlatform": {
+        "lambda-gpu": "linux"
+    }
+{% endhighlight %}
+
+#### 지정 Host (lambda-gpu)로 SSH Login
 {% highlight ruby %}
 ssh lambda-gpu
 {% endhighlight %}
 
 #### → Ctrl + Shift + P → Remote-SSH: Connect to Host → lambda-gpu
-#### (→ Select the platform of the remote host "lambda-gpu" → Linux)
 #### → Open Folder → /home/ubuntu/ (OK)
