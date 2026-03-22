@@ -4,13 +4,13 @@ layout: post
 ---
 #### Lambda Labs에 등록할 키 생성
 
-{% highlight ruby %}
+{% highlight linux %}
 ssh-keygen -t ed25519 -C "my@email.com"
 {% endhighlight %}
 
 Public SSH Key 저장 위치: ~/.ssh/id_ed25519.pub 
 
-{% highlight ruby %}
+{% highlight linux %}
 cat ~/.ssh/id_ed25519.pub
 # ssh-ed25519 xxx= my@email.com
 {% endhighlight %}
@@ -24,7 +24,7 @@ Private SSH Key 저장 위치: ~/.ssh/id_ed25519
 #### VS Code → Extensions → 'Remote - SSH' 설치
 #### → Ctrl + Shift + P → Remote-SSH: Connect to Host → Configure SSH Hosts
 #### → ~/.ssh/config에 추가
-{% highlight ruby %}
+{% highlight linux %}
 Host lambda-gpu
     HostName instance.ip
     User ubuntu
@@ -33,14 +33,14 @@ Host lambda-gpu
 
 #### → Ctrl + Shift + P → Preferences: Open User Settings (JSON)
 #### -> settings.json에 추가
-{% highlight ruby %}
+{% highlight linux %}
 "remote.SSH.remotePlatform": {
         "lambda-gpu": "linux"
     }
 {% endhighlight %}
 
 #### 지정 Host (lambda-gpu)로 SSH Login
-{% highlight ruby %}
+{% highlight linux %}
 ssh lambda-gpu
 {% endhighlight %}
 
